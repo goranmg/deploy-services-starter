@@ -1,0 +1,58 @@
+name: Service Request
+description: Tell me about your deployment/CI/CD needs
+title: "[Request] <project/app name>"
+labels: ["needs-triage", "request"]
+body:
+  - type: input
+    id: contact
+    attributes:
+      label: Contact email / Telegram
+      placeholder: you@example.com / @handle
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Project context
+      description: Tech stack, current status, pain points
+    validations:
+      required: true
+  - type: input
+    id: repo
+    attributes:
+      label: Repo URL (if available)
+      placeholder: https://github.com/org/repo
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Scope
+      options:
+        - Deploy to VPS/Cloud
+        - CI/CD setup (GitHub Actions)
+        - Dockerization
+        - GPT API chatbot on VPS
+        - Performance/Audit/Fix
+    validations:
+      required: true
+  - type: input
+    id: infra
+    attributes:
+      label: Target infra (VPS/Cloud)
+      placeholder: Vercel/Render/DigitalOcean/AWS/Other
+  - type: input
+    id: deadline
+    attributes:
+      label: Deadline (date/timezone)
+      placeholder: 2025-10-30 (Asia/Ho_Chi_Minh)
+  - type: input
+    id: budget
+    attributes:
+      label: Budget range (USD)
+      placeholder: 150–400
+  - type: checkboxes
+    id: consent
+    attributes:
+      label: Terms
+      options:
+        - label: I understand pricing is scope-based and security best practices will be applied.
+          required: true
